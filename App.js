@@ -1,23 +1,17 @@
-import React from 'react';
-import {View, Text} from 'react-native';
-import {createStackNavigator} from '@react-navigation/stack';
-import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
+// In App.js in a new project
 
-//Screens
-import {Home} from './screens/';
+import * as React from 'react';
+import {View, Text} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import Home from './components/Home';
 
 const Stack = createStackNavigator();
 
-const App = () => {
+function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
-          initialRouteName={'Home'}
-          options={{
-            headerShown: false,
-          }}
-        />
         <Stack.Screen
           name="Home"
           component={Home}
@@ -28,8 +22,6 @@ const App = () => {
       </Stack.Navigator>
     </NavigationContainer>
   );
-};
+}
 
-export default () => {
-  return <App />;
-};
+export default App;
